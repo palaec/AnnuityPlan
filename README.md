@@ -1,4 +1,4 @@
-# Lendico
+# Lendico - Plan Generator
 
 - git clone https://github.com/palaec/Lendico.git
 
