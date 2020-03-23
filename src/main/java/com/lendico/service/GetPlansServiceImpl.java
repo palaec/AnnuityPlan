@@ -4,20 +4,12 @@
 package com.lendico.service;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import com.lendico.model.LoanDetails;
 import com.lendico.model.PaymentPlanModel;
 import com.lendico.util.GetFormulas;
