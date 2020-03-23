@@ -1,6 +1,6 @@
 # Lendico
 
-- git clone
+- git clone https://github.com/palaec/Lendico.git
 
 ## Usage
 
