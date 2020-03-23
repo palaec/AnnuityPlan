@@ -34,11 +34,8 @@ public class GetPlansServiceImpl implements GetPlansService{
 		BigDecimal interest = GetFormulas.calculateInterest(new BigDecimal(loanDetails.getLoanAmount()), new BigDecimal(loanDetails.getNominalRate()), 30);
 		BigDecimal principle = GetFormulas.calculatePrinciple(annuity, interest);		
 		List<PaymentPlanModel> list = new ArrayList<PaymentPlanModel>();		
-		System.out.println(loanDetails.getStartDate());
 		list = calculatePaymentPlanModelList(list ,loanDetails.getDuration(),new BigDecimal(loanDetails.getNominalRate()),loanDetails.getStartDate(),annuity,principle,interest,new BigDecimal(loanDetails.getLoanAmount()));
 		return list;
-		// TODO Auto-generated method stub
-		
 	}
 
 	private List<PaymentPlanModel> calculatePaymentPlanModelList(List<PaymentPlanModel> list , int duration,BigDecimal nominalRate,  Date startDate, BigDecimal annuity, BigDecimal principal, BigDecimal interest, BigDecimal initialOutstandingPrincipal) {
@@ -59,13 +56,12 @@ public class GetPlansServiceImpl implements GetPlansService{
 			duration = duration - 1 ;
 			annuity = GetFormulas.calculateAnnunity(initialOutstandingPrincipal, nominalRate, duration);
 		    interest = GetFormulas.calculateInterest(initialOutstandingPrincipal, nominalRate, 30);
-		    
 		    principal = GetFormulas.calculatePrinciple(annuity, interest);
 		    if(principal.compareTo(initialOutstandingPrincipal) > 0) {
 		    	principal = initialOutstandingPrincipal;
 		    }
 		    remainingOutstandingPrincipal = GetFormulas.calculateRemainingOutstandgPrincipal(initialOutstandingPrincipal,principal);
-			calculatePaymentPlanModelList(list, duration,nominalRate ,date,annuity,principal,interest,initialOutstandingPrincipal);	
+			calculatePaymentPlanModelList(list, duration,nominalRate ,date,annuity,principal,interest,initialOutstandingPrincipal);	 // A recursive call
 		}
 		return list;
 	}

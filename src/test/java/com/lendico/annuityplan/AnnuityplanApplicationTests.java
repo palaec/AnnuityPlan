@@ -29,7 +29,6 @@ class AnnuityplanApplicationTests {
 		loanDetails.setDuration(24);
 		try {
 			Date d= new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse("2018-01-01 00:00:01");
-			System.out.println(d);
 			loanDetails.setStartDate(d);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
