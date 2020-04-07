@@ -1,7 +1,5 @@
 # Annuity Plan - Using Recursion and BigDecimal
 
-- git clone https://github.com/palaec/Lendico.git
-
 ## Usage
 
 - Directly using maven
